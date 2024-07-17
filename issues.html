@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .module {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        strong {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .button-point {
+            /* background-color: #007BFF; */
+            /* color: white; */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Issues Documentation</h1>
+    
+    <div class="module">
+        <h2>Deposit Module Issues</h2>
+        <ul>
+            <li><button class="button-point">If permission is not there for finance /approve or reject even though the button is showing in case of payment status is Waiting for Payment. Actual It should not.</button></li>
+        </ul>
+    </div>
+    
+    <div class="module">
+        <h2>Withdraw Module Issues</h2>
+        <ul>
+            <li><button class="button-point">In withdraw when popup is opened and trying to reject or approved the request without permission then popup is not closing, in API getting response permission denied.</button></li>
+            <li><button class="button-point">If permission is not there for finance /approve or reject even though the button is showing in case of payment status is Waiting for Payment. Actual It should not.</button></li>
+        </ul>
+    </div>
+    
+    <div class="module">
+        <h2>Player Management Issues</h2>
+        <ul>
+            <li><button class="button-point">Cannot edit Player agent in Bo-admin.</button></li>
+            <li><button class="button-point">Player Details page is working without permissions.</button></li>
+            <li><button class="button-point">Player-details -> edit button is not working.</button></li>
+            <li><button class="button-point">[View Player Phone Number, View Player Login History, View Player List]: These permissions are allowed then only player-details page can be accessed.</button></li>
+        </ul>
+    </div>
+    
+    <div class="module">
+        <h2>Agent Management Issues</h2>
+        <ul>
+            <li><button class="button-point">Delete agent is not working.</button></li>
+            <li><button class="button-point">Permission is not configured from backend; permission is assigned to user but not checked on list page request in backend.</button></li>
+        </ul>
+    </div>
+</body>
+</html>

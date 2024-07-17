@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .module {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        strong {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .button-point {
+            /* background-color: #007BFF; */
+            /* color: white; */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Permission Documentation</h1>
+    
+    <div class="module">
+        <h2>Transaction Permissions Not Available</h2>
+        <ul>
+            <li><button class="button-point">Transaction -> Payment method history</button></li>
+            <li><button class="button-point">Transaction -> Payment Category</button></li>
+            <li><button class="button-point">Transaction -> Payment Bank Code</button></li>
+        </ul>
+        <p><strong>No permission is required from backend only from frontend they are checking if he has this permission "View Transactions Requests" then they are allowed to see all modules present inside transactions.</strong></p>
+    </div>
+    <div class="module">
+           <!-- Transaction Permissions -->
+
+        <h2>Deposit Module</h2>
+        <p><strong>Issues:</strong> 
+        <p><strong>If permission is not there for finance /approve or reject even though the button is showing in case of payment status is Waiting for Payment. Actual It should not.</strong></p>
+            <ul>
+                <li><button class="button-point">Finance Approve/Reject Deposit: This permission is for all lock or unlock or finance approved.</button></li>
+            </ul>
+        </p>
+        <h2>Deposit Permissions</h2>
+        <ul>
+            <li><button class="button-point">Finance Approve/Reject Deposit</button></li>
+        </ul>
+    </div>
+    
+    <!-- Withdraw Module -->
+    <div class="module">
+        <h2>Withdraw Module</h2>
+        <p><strong>Issues:</strong> 
+        <p><strong>In withdraw when popup is opened and trying to reject or approved the request without permission then popup is not closing, in API getting response permission denied.</strong></p>
+        <p><strong>If permission is not there for finance /approve or reject even though the button is showing in case of payment status is Waiting for Payment. Actual It should not.</strong></p>
+        <ul>
+            <li><button class="button-point">Case 1: When no permission is given for withdraw then at risk state: Message should be "No Permission" instead of "Pending Risk Approval".</button></li>
+            <li><button class="button-point">Case 2: Finance state: Message should be "No Permission" instead of "Locked By someone (name)".</button></li>
+            <li><button class="button-point">Case 3: If no permission for any module of Submodule then the module itself should not display.</button></li>
+        </ul>
+        <h2>Withdraw Permissions</h2>
+        <ul>
+            <li><button class="button-point">Approve/Reject Risk</button></li>
+            <li><button class="button-point">FA Lock Withdraw</button></li>
+            <li><button class="button-point">Finance Approve/Reject Withdraw</button></li>
+        </ul>
+    </div>
+    
+ 
+    
+    <!-- Player Management -->
+    <div class="module">
+        <h2>Player Management Permissions Available</h2>
+        <ul>
+            <li><button class="button-point">View Player List: To see the players in BO-Admin.</button></li>
+            <li><button class="button-point">View Player Phone: To see the player phone number.</button></li>
+            <li><button class="button-point">View Game Transaction Histories: To see the all history of games played by any player in BO-admin.</button></li>
+            <li><button class="button-point">View Player Login History: To see all player login history.</button></li>
+            <li><button class="button-point">Change Player Balance: To update player balance.</button></li>
+        </ul>
+        <p><strong>Issues:</strong> 
+            <ul>
+                <li><button class="button-point">Cannot edit Player agent in Bo-admin.</button></li>
+            <li><button class="button-point">Player Details page is working without permissions.</button></li>
+            <li><button class="button-point">Player-details -> edit button is not working.</button></li>
+            <li><button class="button-point">[ View Player Phone Number, View Player Login History, View Player List ]: These permission are allowed then only player-details page can access </button></li>
+            </ul>
+        </p>
+    </div>
+    
+    <!-- Agent Management -->
+    <div class="module">
+        <h2>Agent Management Permissions</h2>
+        <ul>
+            <li><button class="button-point">View Agents: To see all the agents connected to our system.</button></li>
+            <li><button class="button-point">View Agents Change Histories: To see all the changes done for any agent in BO-admin.</button></li>
+            <li><button class="button-point">Add/Remove Agent Wallet: Add or remove money into wallet.</button></li>
+            <li><button class="button-point">Add/Remove Agent Credit: Add or remove credit money into Credit wallet.</button></li>
+        </ul>
+        <p><strong>Issues:</strong> 
+            <ul>
+                <li><button class="button-point">Delete agent is not working.</button></li>
+                <li><button class="button-point">Permission is not configured from backend; permission is assigned to user but not checked on list page request in backend.</button></li>
+            </ul>
+        </p>
+        <p><strong>Cases:</strong>
+            <ul>
+                <li><button class="button-point">View Agent permission then it's ok it adds.</button></li>
+                <li><button class="button-point">If Add agent permission means it auto checks should be View Agent as well.</button></li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>
